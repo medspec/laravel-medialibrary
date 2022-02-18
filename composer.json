@@ -36,7 +36,9 @@
 
         "spatie/image": "^2.2",
         "spatie/temporary-directory": "^2.0",
-        "symfony/console": "^6.0"
+        "symfony/console": "^6.0",
+
+        "jenssegers/mongodb": "^3.8"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",

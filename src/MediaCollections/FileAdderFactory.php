@@ -2,7 +2,7 @@
 
 namespace Spatie\MediaLibrary\MediaCollections;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\RequestDoesNotHaveFile;
 use Spatie\MediaLibrary\Support\RemoteFile;
@@ -11,7 +11,7 @@ use Spatie\MediaLibraryPro\Dto\PendingMediaItem;
 class FileAdderFactory
 {
     /**
-     * @param \Illuminate\Database\Eloquent\Model $subject
+     * @param \Jenssegers\Mongodb\Eloquent\Model $subject
      * @param string|\Symfony\Component\HttpFoundation\File\UploadedFile $file
      *
      * @return \Spatie\MediaLibrary\MediaCollections\FileAdder

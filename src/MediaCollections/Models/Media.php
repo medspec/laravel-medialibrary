@@ -8,12 +8,12 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Mail\Attachment;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Jenssegers\Mongodb\Eloquent\Model;
 use Spatie\MediaLibrary\Conversions\Conversion;
 use Spatie\MediaLibrary\Conversions\ConversionCollection;
 use Spatie\MediaLibrary\Conversions\ImageGenerators\ImageGeneratorFactory;
@@ -110,7 +110,7 @@ class Media extends Model implements Responsable, Htmlable, Attachable
     public function getAvailableUrl(array $conversionNames): string
     {
         foreach ($conversionNames as $conversionName) {
-            if (!$this->hasGeneratedConversion($conversionName)) {
+            if (! $this->hasGeneratedConversion($conversionName)) {
                 continue;
             }
 
@@ -123,7 +123,7 @@ class Media extends Model implements Responsable, Htmlable, Attachable
     public function getAvailableFullUrl(array $conversionNames): string
     {
         foreach ($conversionNames as $conversionName) {
-            if (!$this->hasGeneratedConversion($conversionName)) {
+            if (! $this->hasGeneratedConversion($conversionName)) {
                 continue;
             }
 
@@ -136,7 +136,7 @@ class Media extends Model implements Responsable, Htmlable, Attachable
     public function getAvailablePath(array $conversionNames): string
     {
         foreach ($conversionNames as $conversionName) {
-            if (!$this->hasGeneratedConversion($conversionName)) {
+            if (! $this->hasGeneratedConversion($conversionName)) {
                 continue;
             }
 

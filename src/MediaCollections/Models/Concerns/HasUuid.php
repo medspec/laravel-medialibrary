@@ -2,8 +2,8 @@
 
 namespace Spatie\MediaLibrary\MediaCollections\Models\Concerns;
 
-use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Support\Str;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 trait HasUuid
 {

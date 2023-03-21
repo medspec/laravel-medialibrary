@@ -2,8 +2,8 @@
 
 namespace Spatie\MediaLibrary\MediaCollections;
 
-use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Jenssegers\Mongodb\Eloquent\Model;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\RequestDoesNotHaveFile;
 use Spatie\MediaLibrary\Support\RemoteFile;
 use Spatie\MediaLibraryPro\Dto\PendingMediaItem;
@@ -45,13 +45,13 @@ class FileAdderFactory
 
                 $key = str_replace($search, $replace, $key);
 
-                if (!request()->hasFile($key)) {
+                if (! request()->hasFile($key)) {
                     throw RequestDoesNotHaveFile::create($key);
                 }
 
                 $files = request()->file($key);
 
-                if (!is_array($files)) {
+                if (! is_array($files)) {
                     return static::create($subject, $files);
                 }
 
